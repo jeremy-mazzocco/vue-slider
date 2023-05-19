@@ -18,15 +18,19 @@
         <div class="slider">
 
 
-            <div class="item" v-for="element in images">
-                <img :src="element.image"></img>
-                <h2>{{ element.title }}</h2>
-                <p>{{ element.text }}</p>
+            <div class="item" :class="active">
+                <img :src="images[activeItem].image"></img>
+                <h2>{{ images[activeItem].title }}</h2>
+                <p>{{ images[activeItem].text }}</p>
             </div>
-
 
         </div>
         <div class="side-slider">
+
+            <div class="card" v-for="(element, i) in images" :class="activeItem === i ? 'border' : ''">
+                <img :src="element.image"></img>
+            </div>
+
             <button id="up" class="button"><i class="fa-solid fa-angle-up"></i></button>
             <button id="down" class="button" @click="clickDown"><i class="fa-solid fa-angle-down"></i></button>
         </div>

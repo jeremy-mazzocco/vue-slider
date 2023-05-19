@@ -3,6 +3,8 @@ const { createApp } = Vue;
 createApp({
     data() {
         return {
+            activeItem: 0,
+            active: 'active',
             images: [
                 {
                     image: 'img/01.webp',
@@ -34,6 +36,10 @@ createApp({
     },
     methods: {
         clickDown() {
+            this.activeItem++
+            if (this.activeItem === this.images) {
+                // this.activeItem = 0
+            }
 
         }
     }
