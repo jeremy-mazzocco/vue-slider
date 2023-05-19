@@ -37,10 +37,15 @@ createApp({
     methods: {
         clickDown() {
             this.activeItem++
-            if (this.activeItem === this.images) {
-                // this.activeItem = 0
+            if (this.activeItem === 5) {
+                this.activeItem = 0
             }
-
+        },
+        clickUp() {
+            this.activeItem--
+            if (this.activeItem === -1) {
+                this.activeItem = 4
+            }
         }
     }
 }).mount('#app')
